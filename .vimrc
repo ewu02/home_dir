@@ -1,14 +1,13 @@
-
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=utf-8,latin1
 endif
-set nocompatible	" Use Vim defaults (much better!)
+set nocompatible	
 
 set background=dark
 set encoding=utf8
 
-" set wrap
-" set textwidth=80
+set wrap
+set textwidth=80
 let g:RightAlign_RightBorder=80
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -29,7 +28,7 @@ highlight PmenuSel ctermfg=black
 
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
-" Try the following if your GUI uses a dark background.
+" For dark background.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 " Show trailing whitespace and spaces before a tab:
@@ -81,22 +80,18 @@ syntax match Tab /\t/
 hi Tab gui=underline guifg=blue ctermbg=blue
 
 " Set font according to system
-" if you're using a mac
+" For mac
 set gfn=Menlo:h16
 set shell=/bin/bash
 
-" if you're using windows
+" For windows
 "set gfn=Bitstream\ Vera\ Sans\ Mono:h10
 
-" if you're using linux
+" For linux
 "  set gfn=Monospace\ 10
 "  set shell=/bin/bash
 
-" set t_Co=256
-" set background=dark
-" colorscheme ir_black
-
-" Remaps jj to escape in insert mode.  You'll never type jj anyway, so it's great!
+" Remaps jj to escape in insert mode"
 inoremap jj <Esc>
 nnoremap JJJJ <Nop>
 
@@ -145,8 +140,6 @@ if &term=="xterm"
      set t_Sf=[3%dm
 endif
 
-set textwidth=79
-set wrap
 highlight OverLength ctermbg=red ctermfg=white " guibg=#592929
 match OverLength /\%81v.\+/
 
