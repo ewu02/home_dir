@@ -135,6 +135,8 @@ if &t_Co > 2 || has("gui_running")
    set incsearch
    set hlsearch
    set nolazyredraw
+   "Remove the toolbar in MacVim
+   set guioptions=egmrt
 endif
 
 if &term=="xterm"
