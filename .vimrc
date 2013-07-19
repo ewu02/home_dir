@@ -6,6 +6,9 @@ set nocompatible
 set background=dark
 set encoding=utf8
 
+" Puts all yanks, etc., into clipboard
+set clipboard=unnamed
+
 set wrap
 set textwidth=80
 let g:RightAlign_RightBorder=80
@@ -143,3 +146,5 @@ endif
 highlight OverLength ctermbg=red ctermfg=white " guibg=#592929
 match OverLength /\%81v.\+/
 
+" open a NERDTree automatically when vim starts up even if no files were specified.
+autocmd vimenter * if !argc() | NERDTree | endif
