@@ -26,6 +26,10 @@ filetype indent on
 " read a file when it is changed from the outside
 set autoread
 
+
+" Removes all trailing whitespaces for stated filetypes before saving
+autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 " Make the omnicomplete text readable
 highlight PmenuSel ctermfg=black
 
