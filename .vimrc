@@ -9,46 +9,51 @@ set encoding=utf8
 " Puts all yanks, etc., into clipboard
 set clipboard=unnamed
 
+" Wraps lines longer than the width of the window
 set wrap
+
+" Maximum width of text; A longer line will be
+"	 broken after white space to get this width.
 set textwidth=80
+
 let g:RightAlign_RightBorder=80
-if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
+
+" Highlights the column after 'textwidth' column
+set colorcolumn=+1 
 
 " Syntax Higlighting
 filetype off
 filetype plugin on
 filetype indent on
 
-" read a file when it is changed from the outside
-set autoread
+syntax on
 
+
+" Highlight all matched pattern
+set hlsearch
+" Highlight matched pattern so far while still typing a search command 
+set incsearch
+
+" Automatically re-read an opened file when it has been modified externally. 
+set autoread
 
 " Removes all trailing whitespaces for stated filetypes before saving
 autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 
-" Make the omnicomplete text readable
-highlight PmenuSel ctermfg=black
-
-" Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-" For dark background.
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+" Ensure highlight group is not cleared by future colorscheme commands
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-" Show trailing whitespace and spaces before a tab:
-match ExtraWhitespace /\s\+$\| \+\ze\t/
 
-set makeprg=./compile 
+" Highlights everything over column 80
+highlight OverLength ctermbg=red ctermfg=white " guibg=#592929
+autocmd BufWinEnter * match OverLength /\%81v.\+/
+
 set guifont=Monospace\ 14
 set tabstop=2
 set backspace=2
 set autoindent
 set smartindent
 
-" This shows what you are typing as a command at the bottom of the page
+" Shows what you are typing as a command at the bottom of the page
 set showcmd
 set cmdheight=2
 
@@ -56,35 +61,37 @@ set cmdheight=2
 set expandtab
 set smarttab
 set softtabstop=2
-" control how many columns text is indented with the reindent operations (<< and >>) and automatic C-style indentation.
+" Control how many columns text is indented with the reindent operations 
+"   (<< and >>) and automatic C-style indentation.
 set shiftwidth=2
 
+" Changes the current working directory to the opened file or buffer. 
 set autochdir
 
-" Case handling
+"" Case handling
 set ignorecase
+" Override the 'ignorecase' option if the search pattern contains upper
+"  case characters. Used for the commands "/", "?", "n", "N",
+"  ":g" and ":s".
 set smartcase
 
-" Spell checking (default=false)
-if version >= 700
-  set spl=en spell
-  set nospell
-endif
+" Ignores these file pattern matches
+set wildignore=*.swp
 
-" For linux clipboard register
-let g:clipbrdDefaultReg = '+'
-
+" Show line number
 set number
-set bs=indent,eol,start		" allow backspacing over everything in insert mode
-"set backup		" keep a backup file
-set viminfo='20,\"50	" read/write a .viminfo file, don't store more
-			" than 50 lines of registers
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
+" Show the line and column number of the cursor position, separated by a comma.
+set ruler
 
-" Highlight tabs
-syntax match Tab /\t/
-hi Tab gui=underline guifg=blue ctermbg=blue
+" Allows backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Read/write a .viminfo file, don't store more than 50 lines of registers
+set viminfo='20,\"50
+" Keep up to 50 lines of command line history
+set history=50
+
+
 
 " Set font according to system
 " For mac
@@ -103,54 +110,9 @@ inoremap jj <Esc>
 nnoremap JJJJ <Nop>
 
 
-" Only do this part when compiled with support for autocommands
-if has("autocmd")
-  augroup redhat
-    " In text files, always limit the width of text to 78 characters
-    autocmd BufRead *.txt set tw=78
-    " When editing a file, always jump to the last cursor position
-    autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal! g'\"" |
-    \ endif
-  augroup END
-endif
+"Remove the toolbar in MacVim
+set guioptions=egmrt
 
-if has("cscope") && filereadable("/usr/bin/cscope")
-   set csprg=/usr/bin/cscope
-   set csto=0
-   set cst
-   set nocsverb
-   " add any database in current directory
-   if filereadable("cscope.out")
-      cs add cscope.out
-   " else add database pointed to by environment
-   elseif $CSCOPE_DB != ""
-      cs add $CSCOPE_DB
-   endif
-   set csverb
-endif
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-   " Incremental search
-   set incsearch
-   set hlsearch
-   set nolazyredraw
-   "Remove the toolbar in MacVim
-   set guioptions=egmrt
-endif
-
-if &term=="xterm"
-     set t_Co=8
-     set t_Sb=[3%dm
-     set t_Sf=[3%dm
-endif
-
-highlight OverLength ctermbg=red ctermfg=white " guibg=#592929
-match OverLength /\%81v.\+/
-
+  
 " open a NERDTree automatically when vim starts up even if no files were specified.
 autocmd vimenter * if !argc() | NERDTree | endif
