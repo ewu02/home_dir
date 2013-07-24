@@ -114,7 +114,6 @@ nnoremap JJJJ <Nop>
 "Remove the toolbar in MacVim
 set guioptions=egmrt
 
-  
 " Open a NERDTree automatically when vim starts up even if no files were specified.
 autocmd vimenter * if !argc() | NERDTree | endif
 
