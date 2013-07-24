@@ -21,13 +21,14 @@ let g:RightAlign_RightBorder=80
 " Highlights the column after 'textwidth' column
 set colorcolumn=+1 
 
+" Pathogen: Manages runtimepath for plugins and runtime files in private dir. 
+execute pathogen#infect()
+
 " Syntax Higlighting
+syntax on
 filetype off
 filetype plugin on
 filetype indent on
-
-syntax on
-
 
 " Highlight all matched pattern
 set hlsearch
@@ -114,5 +115,8 @@ nnoremap JJJJ <Nop>
 set guioptions=egmrt
 
   
-" open a NERDTree automatically when vim starts up even if no files were specified.
+" Open a NERDTree automatically when vim starts up even if no files were specified.
 autocmd vimenter * if !argc() | NERDTree | endif
+
+" Closes vim if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
