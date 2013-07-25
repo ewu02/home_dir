@@ -21,9 +21,6 @@ let g:RightAlign_RightBorder=80
 " Highlights the column after 'textwidth' column
 set colorcolumn=+1 
 
-" Pathogen: Manages runtimepath for plugins and runtime files in private dir. 
-execute pathogen#infect()
-
 " Syntax Higlighting
 syntax on
 filetype off
