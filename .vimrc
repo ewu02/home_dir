@@ -22,6 +22,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
 " vim-scripts repos
 "  e.g., Bundle 'L9'
 " non github repos
@@ -38,6 +39,10 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Required for vim-ruby
+filetype on 
+filetype indent on
+filetype plugin on
 
 set background=dark
 set encoding=utf8
