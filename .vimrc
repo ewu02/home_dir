@@ -21,6 +21,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-rails'
 " vim-scripts repos
 "  e.g., Bundle 'L9'
 " non github repos
