@@ -23,6 +23,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'mileszs/ack.vim'
 " vim-scripts repos
 "  e.g., Bundle 'L9'
 " non github repos
@@ -39,10 +40,15 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Required for vim-ruby
+" Required for vim-ruby
 filetype on 
 filetype indent on
 filetype plugin on
+
+" Open a NERDTree automatically when vim starts up even if no files were specified.
+autocmd vimenter * if !argc() | NERDTree | endif
+" Closes vim if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
 
 set background=dark
 set encoding=utf8
@@ -149,8 +155,3 @@ nnoremap JJJJ <Nop>
 "Remove the toolbar in MacVim
 set guioptions=egmrt
 
-" Open a NERDTree automatically when vim starts up even if no files were specified.
-autocmd vimenter * if !argc() | NERDTree | endif
-
-" Closes vim if the only window left open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
