@@ -26,6 +26,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'mileszs/ack.vim'
+Bundle 'tsaleh/vim-matchit'
 " vim-scripts repos
 "  e.g., Bundle 'L9'
 " non github repos
