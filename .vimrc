@@ -27,6 +27,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'mileszs/ack.vim'
 Bundle 'tsaleh/vim-matchit'
+
 " vim-scripts repos
 "  e.g., Bundle 'L9'
 " non github repos
@@ -154,6 +155,15 @@ set shell=/bin/bash
 inoremap jj <Esc>
 nnoremap JJJJ <Nop>
 
+" Toggles between absolute and relative line numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<cr>
 
 "Remove the toolbar in MacVim
 set guioptions=egmrt
