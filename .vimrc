@@ -27,6 +27,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'mileszs/ack.vim'
 Bundle 'tsaleh/vim-matchit'
+Bundle 'Lokaltog/vim-easymotion'
 
 " vim-scripts repos
 "  e.g., Bundle 'L9'
