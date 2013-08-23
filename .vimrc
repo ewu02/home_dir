@@ -166,6 +166,11 @@ function! NumberToggle()
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
+let mapleader=" "
+
+" For easymotion plugin
+let g:EasyMotion_leader_key = '<Leader>'
+
 "Remove the toolbar in MacVim
 set guioptions=egmrt
 
