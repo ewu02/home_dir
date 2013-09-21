@@ -28,6 +28,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'mileszs/ack.vim'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'scrooloose/syntastic'
 
 " vim-scripts repos
 "  e.g., Bundle 'L9'
