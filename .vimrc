@@ -160,7 +160,7 @@ nnoremap JJJJ <Nop>
 " Toggles between absolute and relative line numbers
 function! NumberToggle()
   if(&relativenumber == 1)
-    set number
+    set norelativenumber
   else
     set relativenumber
   endif
