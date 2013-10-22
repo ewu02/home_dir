@@ -157,6 +157,9 @@ set shell=/bin/bash
 inoremap jj <Esc>
 nnoremap JJJJ <Nop>
 
+" Enable relativenumber by default
+set relativenumber
+
 " Toggles between absolute and relative line numbers
 function! NumberToggle()
   if(&relativenumber == 1)
