@@ -175,6 +175,8 @@ let mapleader=" "
 " For easymotion plugin
 let g:EasyMotion_leader_key = '<Leader>'
 
-"Remove the toolbar in MacVim
+" Remove the toolbar in MacVim
 set guioptions=egmrt
 
+" Ignores trailing white space differences in vimdiff
+set diffopt+=iwhite
