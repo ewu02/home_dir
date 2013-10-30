@@ -40,7 +40,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(bundler rails4 git ruby)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,5 +51,10 @@ alias vimrc='vim ~/.vimrc'
 alias downloads='cd ~/Downloads'
 alias excel='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app'
 alias word='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app'
-
+alias leadco='cd ~/gdrive-adharmonics/returns/leadco'
+alias insight='cd ~/gdrive-adharmonics/Insight/insight-returns'
+alias filter='cd ~/gdrive-adharmonics/lead_filter_management'
 alias zshrc='vim ~/.zshrc'
+
+# Enable shims and autocompletion for rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

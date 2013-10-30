@@ -32,6 +32,7 @@ Bundle 'scrooloose/syntastic'
 
 " vim-scripts repos
 "  e.g., Bundle 'L9'
+Bundle 'copypath.vim'
 " non github repos
 "  e.g., Bundle 'git://git.wincent.com/command-t.git'
 
