@@ -29,6 +29,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
+Bundle 'kchmck/vim-coffee-script'
 
 " vim-scripts repos
 "  e.g., Bundle 'L9'
@@ -176,7 +177,7 @@ let mapleader=" "
 " For easymotion plugin
 let g:EasyMotion_leader_key = '<Leader>'
 
-" Remove the toolbar in MacVim
+"Remove the toolbar in MacVim
 set guioptions=egmrt
 
 " Ignores trailing white space differences in vimdiff
