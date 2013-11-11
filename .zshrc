@@ -48,13 +48,16 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/dave/.rvm/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias vimrc='vim ~/.vimrc'
+alias zshrc='vim ~/.zshrc'
 alias downloads='cd ~/Downloads'
 alias excel='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app'
 alias word='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app'
-alias leadco='cd ~/gdrive-adharmonics/returns/leadco'
-alias insight='cd ~/gdrive-adharmonics/Insight/insight-returns'
-alias filter='cd ~/gdrive-adharmonics/lead_filter_management'
-alias zshrc='vim ~/.zshrc'
+alias returns='cd ~/Dropbox/adharmonics/returns'
+alias insight='cd ~/Dropbox/adharmonics/Insight/insight-returns'
+alias filter='cd ~/Dropbox/adharmonics/LeadSimulator'
 
 # Enable shims and autocompletion for rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Needed by mvn to use jdk 1.7
+export JAVA_HOME=$(/usr/libexec/java_home)
