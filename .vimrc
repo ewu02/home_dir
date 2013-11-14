@@ -31,6 +31,9 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
 
+"Require additional steps to complete installation. Check plugin homepage.
+Bundle 'Valloric/YouCompleteMe' 
+
 " vim-scripts repos
 "  e.g., Bundle 'L9'
 Bundle 'copypath.vim'
