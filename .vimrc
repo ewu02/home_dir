@@ -175,7 +175,7 @@ function! NumberToggle()
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
-let mapleader=" "
+let mapleader=','
 
 " For easymotion plugin
 let g:EasyMotion_leader_key = '<Leader>'
