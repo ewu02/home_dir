@@ -14,5 +14,11 @@ ln -s $PWD/.gitignore_global $HOME/.gitignore_global
 # Installs Vundle in $HOME directory
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
+# Installs homebrew
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+
+# Installs ack
+brew install ack
+
 # Installs or updates all bundles in vundle 
 vim +BundleInstall! +qall
