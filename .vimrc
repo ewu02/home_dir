@@ -185,3 +185,8 @@ set guioptions=egmrt
 
 " Ignores trailing white space differences in vimdiff
 set diffopt+=iwhite
+
+" delete and paste instead of cut and copy/overwrite
+nnoremap d "_d
+vnoremap d "_d
+vnoremap p "_dP
