@@ -160,7 +160,6 @@ set shell=/bin/bash
 
 " Remaps jj to escape in insert mode"
 inoremap jj <Esc>
-nnoremap JJJJ <Nop>
 
 " Enable relativenumber by default
 set relativenumber
