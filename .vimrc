@@ -189,3 +189,6 @@ set diffopt+=iwhite
 nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
+
+" html2haml
+:vmap <leader>h :!$HOME/.rbenv/shims/html2haml<cr>
