@@ -40,7 +40,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler rails4 git ruby)
+plugins=(bundler rails git ruby)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -55,6 +55,10 @@ alias word='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app'
 alias returns='cd ~/Dropbox/adharmonics/returns'
 alias insight='cd ~/Dropbox/adharmonics/Insight/insight-returns'
 alias filter='cd ~/Dropbox/adharmonics/LeadSimulator'
+
+# Bypass issues with zshrc rails plugin 
+alias rails='rails'
+alias rake='rake'
 
 # Enable shims and autocompletion for rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
