@@ -171,6 +171,7 @@ function! NumberToggle()
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
+" Leader key
 let mapleader=','
 
 " For easymotion plugin
@@ -187,5 +188,9 @@ nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
 
-" html2haml
+" html2haml (external install via gem)
+"   Converts html selection to haml
 :vmap <leader>h :!$HOME/.rbenv/shims/html2haml<cr>
+" js2Coffee (external install via npm)
+"   Converts javascript selection to coffeescript
+:vmap <leader>g :!/usr/local/bin/js2coffee<cr>
