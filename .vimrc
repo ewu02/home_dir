@@ -188,9 +188,14 @@ nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
 
+" Allows selection of whole words containing '-' 
+set isk+=-
+
 " html2haml (external install via gem)
 "   Converts html selection to haml
 :vmap <leader>h :!$HOME/.rbenv/shims/html2haml<cr>
 " js2Coffee (external install via npm)
 "   Converts javascript selection to coffeescript
 :vmap <leader>g :!/usr/local/bin/js2coffee<cr>
+
+
