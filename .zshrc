@@ -65,3 +65,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Needed by mvn to use jdk 1.7
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Activates zsh's mv utility
+autoload -U zmv
+# Automatic conversion
+#   of the wildcards into the appropriate syntax; no need to quote the argument
+alias mmv='noglob zmv -W'
