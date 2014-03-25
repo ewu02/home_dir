@@ -54,7 +54,6 @@ alias excel='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app'
 alias word='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app'
 alias returns='cd ~/Dropbox/adharmonics/returns'
 alias insight='cd ~/Dropbox/adharmonics/Insight/insight-returns'
-alias filter='cd ~/Dropbox/adharmonics/LeadSimulator'
 
 # Bypass issues with zshrc rails plugin 
 alias rails='rails'
@@ -71,3 +70,8 @@ autoload -U zmv
 # Automatic conversion
 #   of the wildcards into the appropriate syntax; no need to quote the argument
 alias mmv='noglob zmv -W'
+
+# For LeadSimulator 
+LEAD_SIMULATOR=$HOME/Dropbox/adharmonics/LeadSimulator
+alias filter='cd $HOME/Dropbox/adharmonics/LeadSimulator'
+alias filter='cd $LEAD_SIMULATOR'
