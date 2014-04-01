@@ -15,7 +15,7 @@ ZSH_THEME="robbyrussell"
 # CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -45,8 +45,6 @@ plugins=(bundler rails git ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/dave/.rvm/bin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 alias downloads='cd ~/Downloads'
@@ -75,3 +73,9 @@ alias mmv='noglob zmv -W'
 LEAD_SIMULATOR=$HOME/Dropbox/adharmonics/LeadSimulator
 alias filter='cd $HOME/Dropbox/adharmonics/LeadSimulator'
 alias filter='cd $LEAD_SIMULATOR'
+
+# Use Homebrew's directories for rbenv (rather than ~/.rbenv)
+export RBENV_ROOT=/usr/local/var/rbenv
+# Set ruby and gem path to rbenv root
+export PATH="$RBENV_ROOT/bin:$PATH"
+export PATH="$RBENV_ROOT/shims:$PATH"
