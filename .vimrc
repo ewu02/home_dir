@@ -26,14 +26,20 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'mileszs/ack.vim'
-Bundle 'tsaleh/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'wavded/vim-stylus'
+Bundle 'moll/vim-node'
+Bundle 'einars/js-beautify'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'jordansissel/vim-ackmore'
 
 " vim-scripts repos
 "  e.g., Bundle 'L9'
 Bundle 'copypath.vim'
+Bundle 'matchit.zip'
 " non github repos
 "  e.g., Bundle 'git://git.wincent.com/command-t.git'
 
@@ -193,10 +199,20 @@ set isk+=-
 
 " html2haml (external install via gem)
 "   Converts html selection to haml
-:vmap <leader>h :!$HOME/.rbenv/shims/html2haml<cr>
+:vmap <leader>h :!/usr/local/var/rbenv/shims/html2haml<cr>
+" html2Jade (external install via npm)
+"   Converts html selection to jade
+:vmap <leader>f :!/usr/local/bin/html2jade --bodyless<cr>
 " js2Coffee (external install via npm)
 "   Converts javascript selection to coffeescript
 :vmap <leader>g :!/usr/local/bin/js2coffee<cr>
+
+"" For Beautifiers
+autocmd FileType javascript :vmap <leader>u :call JsBeautify()<cr>
+" for html
+autocmd FileType html :vmap <leader>u :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css :vmap <leader>u :call CSSBeautify()<cr>
 
 set wildignore+=*/tmp/*,*/log/**,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows

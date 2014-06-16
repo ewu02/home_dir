@@ -49,6 +49,7 @@ alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 alias downloads='cd ~/Downloads'
 alias excel='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app'
+alias number='open -a /Applications/Numbers.app'
 alias word='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app'
 alias returns='cd ~/Dropbox/adharmonics/returns'
 alias insight='cd ~/Dropbox/adharmonics/Insight/insight-returns'
@@ -71,8 +72,11 @@ alias mmv='noglob zmv -W'
 
 # For LeadSimulator 
 LEAD_SIMULATOR=$HOME/Dropbox/adharmonics/LeadSimulator
-alias filter='cd $HOME/Dropbox/adharmonics/LeadSimulator'
 alias filter='cd $LEAD_SIMULATOR'
+
+# For ClicksServicesUI 
+CLICKS_SERVICES_UI=$HOME/Dropbox/adharmonics/ClicksServicesUI
+alias clicks='cd $CLICKS_SERVICES_UI'
 
 # Use Homebrew's directories for rbenv (rather than ~/.rbenv)
 export RBENV_ROOT=/usr/local/var/rbenv
