@@ -94,7 +94,7 @@ set incsearch
 set autoread
 
 " Removes all trailing whitespaces for stated filetypes before saving
-autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,ruby,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Ensure highlight group is not cleared by future colorscheme commands
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
@@ -214,5 +214,5 @@ autocmd FileType html :vmap <leader>u :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css :vmap <leader>u :call CSSBeautify()<cr>
 
-set wildignore+=*/tmp/*,*/log/**,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*/log/**,*.so,*.swp,*.zip,*/dev/**,*/dist/**     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
