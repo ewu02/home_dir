@@ -20,7 +20,7 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
 # Installs packages
-brew install ack git macvim mysql zsh rbenv tree
+brew install ack git macvim mysql zsh rbenv tree tmux
 
 # Installs or updates all bundles in vundle 
 vim +BundleInstall! +qall
