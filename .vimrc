@@ -189,7 +189,7 @@ set guioptions=egmrt
 " Ignores trailing white space differences in vimdiff
 set diffopt+=iwhite
 
-" delete and paste instead of cut and copy/overwrite
+" Delete and paste instead of cut and copy/overwrite
 nnoremap d "_d
 vnoremap d "_d
 vnoremap p "_dP
@@ -216,3 +216,11 @@ autocmd FileType css :vmap <leader>u :call CSSBeautify()<cr>
 
 set wildignore+=*/tmp/*,*/log/**,*.so,*.swp,*.zip " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+" Shortcut to open .vimrc and source current file
+nnoremap <leader>z :vsplit $MYVIMRC<cr>
+nnoremap <leader>zz :source $MYVIMRC<cr>
+
+" Abbreviations (insert mode)
+"  substitute an abbreviation when you type any non-keyword character after an abbreviation
+" I.e., iabbrev adn and
