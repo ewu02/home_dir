@@ -17,7 +17,7 @@ ln -s $PWD/.editorconfig $HOME/.editorconfig
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # Installs homebrew
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Installs packages
 brew install ack git macvim mysql zsh rbenv tree tmux
