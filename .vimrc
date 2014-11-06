@@ -36,6 +36,7 @@ Bundle 'moll/vim-node'
 Bundle 'einars/js-beautify'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'jordansissel/vim-ackmore'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 " vim-scripts repos
 "  e.g., Bundle 'L9'
@@ -215,12 +216,18 @@ autocmd FileType html :vmap <leader>u :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css :vmap <leader>u :call CSSBeautify()<cr>
 
+" Enable indent guides at startup
+autocmd VimEnter * IndentGuidesEnable
+
 set wildignore+=*/tmp/*,*/log/**,*.so,*.swp,*.zip " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 " Shortcut to open .vimrc and source current file
 nnoremap <leader>z :vsplit $MYVIMRC<cr>
 nnoremap <leader>zz :source $MYVIMRC<cr>
+
+" Defines normal highlight group colorscheme for vim-indent-guides
+hi Normal guifg=White guibg=Black
 
 " Abbreviations (insert mode)
 "  substitute an abbreviation when you type any non-keyword character after an abbreviation
