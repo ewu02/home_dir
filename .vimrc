@@ -105,7 +105,16 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 highlight OverLength ctermbg=red ctermfg=white " guibg=#592929
 autocmd BufWinEnter * match OverLength /\%81v.\+/
 
-set guifont=Monospace\ 14
+if has('gui_running')
+  set guioptions-=T " No toolbar
+  if has('gui_win32') " Windows
+    set guifont=Bitstream\ Vera\ Sans\ Mono:h16
+  else " Linux
+    set gfn=Menlo:h16
+    set shell=/bin/bash
+  endif
+end
+
 set tabstop=2
 set backspace=2
 set autoindent
@@ -150,19 +159,6 @@ set viminfo='20,\"50
 set history=50
 
 
-
-" Set font according to system
-" For mac
-set gfn=Menlo:h16
-set shell=/bin/bash
-
-" For windows
-"set gfn=Bitstream\ Vera\ Sans\ Mono:h10
-
-" For linux
-"  set gfn=Monospace\ 10
-"  set shell=/bin/bash
-
 " Remaps jj to escape in insert mode"
 inoremap jj <Esc>
 
@@ -184,9 +180,6 @@ let mapleader=','
 
 " For easymotion plugin
 let g:EasyMotion_leader_key = '<Leader>'
-
-"Remove the toolbar in MacVim
-set guioptions=egmrt
 
 " Ignores trailing white space differences in vimdiff
 set diffopt+=iwhite
@@ -228,6 +221,9 @@ nnoremap <leader>zz :source $MYVIMRC<cr>
 
 " Defines normal highlight group colorscheme for vim-indent-guides
 hi Normal guifg=White guibg=Black
+
+" Search for visually selected text
+vnoremap // y/<C-R>"<CR>
 
 " Abbreviations (insert mode)
 "  substitute an abbreviation when you type any non-keyword character after an abbreviation
