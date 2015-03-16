@@ -96,7 +96,7 @@ set incsearch
 set autoread
 
 " Removes all trailing whitespaces for stated filetypes before saving
-autocmd FileType c,cpp,java,php,ruby,javascript,jade autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,ruby,javascript,sass,jade autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Ensure highlight group is not cleared by future colorscheme commands
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
