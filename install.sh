@@ -20,7 +20,7 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Installs packages
-brew install ack git macvim zsh rbenv tree
+brew install ack git macvim zsh rbenv tree hub
 
 # Installs or updates all bundles in vundle 
 vim +BundleInstall! +qall
