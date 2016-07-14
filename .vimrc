@@ -226,6 +226,11 @@ hi Normal guifg=White guibg=Black
 " Search for visually selected text
 vnoremap // y/<C-R>"<CR>
 
+" Fall back to Ack if Ag is not available
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " Abbreviations (insert mode)
 "  substitute an abbreviation when you type any non-keyword character after an abbreviation
 " I.e., iabbrev adn and
