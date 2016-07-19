@@ -143,9 +143,6 @@ set ignorecase
 "  ":g" and ":s".
 set smartcase
 
-" Ignores these file pattern matches
-set wildignore=*.swp
-
 " Show line number
 set number
 " Show the line and column number of the cursor position, separated by a comma.
@@ -213,6 +210,10 @@ autocmd FileType css :vmap <leader>u :call CSSBeautify()<cr>
 " Enable indent guides at startup
 autocmd VimEnter * IndentGuidesEnable
 
+" For ctrlp: Ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Ignores these file pattern matches
 set wildignore+=*/tmp/*,*/log/**,*.so,*.swp,*.zip " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
