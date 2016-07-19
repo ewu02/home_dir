@@ -232,6 +232,9 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+" Convenient way to play a macro recorded to register q
+nnoremap <Space> @q
+
 " Abbreviations (insert mode)
 "  substitute an abbreviation when you type any non-keyword character after an abbreviation
 " I.e., iabbrev adn and
