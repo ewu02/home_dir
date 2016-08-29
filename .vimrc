@@ -62,8 +62,6 @@ filetype on
 filetype indent on
 filetype plugin on
 
-" Open a NERDTree automatically when vim starts up even if no files were specified.
-autocmd vimenter * if !argc() | NERDTree | endif
 " Closes vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
 
@@ -234,6 +232,9 @@ endif
 
 " Convenient way to play a macro recorded to register q
 nnoremap <Space> @q
+
+" Sort words in line
+vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
 
 " Abbreviations (insert mode)
 "  substitute an abbreviation when you type any non-keyword character after an abbreviation
