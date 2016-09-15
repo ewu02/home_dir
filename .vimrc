@@ -76,9 +76,9 @@ set wrap
 
 " Maximum width of text; A longer line will be
 "	 broken after white space to get this width.
-set textwidth=80
+set textwidth=120
 
-let g:RightAlign_RightBorder=80
+let g:RightAlign_RightBorder=120
 
 " Highlights the column after 'textwidth' column
 set colorcolumn=+1 
@@ -100,7 +100,7 @@ autocmd FileType c,cpp,java,php,ruby,javascript,sass,jade autocmd BufWritePre <b
 " Ensure highlight group is not cleared by future colorscheme commands
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
-" Highlights everything over column 80
+" Highlights everything over column 120
 highlight OverLength ctermbg=red ctermfg=white " guibg=#592929
 autocmd BufWinEnter * match OverLength /\%81v.\+/
 
