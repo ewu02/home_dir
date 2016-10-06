@@ -27,6 +27,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'mileszs/ack.vim'
 Bundle 'moll/vim-node'
+Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -94,8 +95,8 @@ set incsearch
 " Automatically re-read an opened file when it has been modified externally. 
 set autoread
 
-" Removes all trailing whitespaces for stated filetypes before saving
-autocmd FileType c,cpp,java,php,ruby,javascript,sass,jade autocmd BufWritePre <buffer> :%s/\s\+$//e
+" Removes all trailing whitespaces before saving
+autocmd BufWritePre * %s/\s\+$//e
 
 " Ensure highlight group is not cleared by future colorscheme commands
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
