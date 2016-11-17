@@ -22,5 +22,5 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 # Installs packages
 brew install ack git macvim zsh rbenv tree hub ag
 
-# Installs or updates all bundles in vundle 
-vim +BundleInstall! +qall
+# Installs or updates all plugins in vundle
+vim +PluginInstall! +qall

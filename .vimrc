@@ -4,62 +4,59 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ For Vundle"""
-set nocompatible	
+set nocompatible
 filetype on "Prevents stock OS X vim from exiting with error
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" required!
+Plugin 'gmarik/vundle'
 
 " original repos on github
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'einars/js-beautify'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'jordansissel/vim-ackmore'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'mileszs/ack.vim'
-Bundle 'moll/vim-node'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'wavded/vim-stylus'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'jordansissel/vim-ackmore'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'keith/swift.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'moll/vim-node'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'wavded/vim-stylus'
 
 " vim-scripts repos
-"  e.g., Bundle 'L9'
-Bundle 'copypath.vim'
-Bundle 'matchit.zip'
+"  e.g., Plugin 'L9'
+Plugin 'copypath.vim'
+Plugin 'matchit.zip'
 " non github repos
-"  e.g., Bundle 'git://git.wincent.com/command-t.git'
+"  e.g., Plugin 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on     " required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments after Plugin command are not allowed..
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Required for vim-ruby
-filetype on 
+filetype on
 filetype indent on
 filetype plugin on
 
@@ -82,17 +79,17 @@ set textwidth=120
 let g:RightAlign_RightBorder=120
 
 " Highlights the column after 'textwidth' column
-set colorcolumn=+1 
+set colorcolumn=+1
 
 " Syntax Higlighting
 syntax on
 
 " Highlight all matched pattern
 set hlsearch
-" Highlight matched pattern so far while still typing a search command 
+" Highlight matched pattern so far while still typing a search command
 set incsearch
 
-" Automatically re-read an opened file when it has been modified externally. 
+" Automatically re-read an opened file when it has been modified externally.
 set autoread
 
 " Removes all trailing whitespaces before saving
@@ -128,11 +125,11 @@ set cmdheight=2
 set expandtab
 set smarttab
 set softtabstop=2
-" Control how many columns text is indented with the reindent operations 
+" Control how many columns text is indented with the reindent operations
 "   (<< and >>) and automatic C-style indentation.
 set shiftwidth=2
 
-" Changes the current working directory to the opened file or buffer. 
+" Changes the current working directory to the opened file or buffer.
 set autochdir
 
 "" Case handling
@@ -188,23 +185,6 @@ vnoremap p "_dP
 
 " Allows selection of whole words containing '-'
 set isk+=-
-
-" html2haml (external install via gem)
-"   Converts html selection to haml
-:vmap <leader>h :!/usr/local/var/rbenv/shims/html2haml<cr>
-" html2Jade (external install via npm)
-"   Converts html selection to jade
-:vmap <leader>f :!/usr/local/bin/html2jade --bodyless<cr>
-" js2Coffee (external install via npm)
-"   Converts javascript selection to coffeescript
-:vmap <leader>g :!/usr/local/bin/js2coffee<cr>
-
-"" For Beautifiers
-autocmd FileType javascript :vmap <leader>u :call JsBeautify()<cr>
-" for html
-autocmd FileType html :vmap <leader>u :call HtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css :vmap <leader>u :call CSSBeautify()<cr>
 
 " Enable indent guides at startup
 autocmd VimEnter * IndentGuidesEnable

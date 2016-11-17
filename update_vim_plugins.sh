@@ -1,5 +1,4 @@
 #!/bin/bash
 
-# Installs or updates all bundles in vundle 
-vim +BundleInstall! +qall
-
+# Installs or updates all plugins in vundle
+vim +PluginInstall! +qall
