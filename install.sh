@@ -13,14 +13,17 @@ ln -s $PWD/.gitignore_global $HOME/.gitignore_global
 ln -s $PWD/.NERDTreeBookmarks $HOME/.NERDTreeBookmarks
 ln -s $PWD/.editorconfig $HOME/.editorconfig
 
-# Installs Vundle in $HOME directory
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-
 # Installs homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Installs packages
 brew install ack git macvim zsh rbenv tree hub ag
+
+# Set up global .gitignore
+git config --global core.excludesfile ~/.gitignore_global
+
+# Installs Vundle in $HOME directory
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # Installs or updates all plugins in vundle
 vim +PluginInstall! +qall
