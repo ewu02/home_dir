@@ -29,7 +29,9 @@ Plugin 'keith/swift.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'moll/vim-node'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
@@ -67,6 +69,21 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 set background=dark
 set encoding=utf8
+
+" React.js
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" vim-closetag
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.jsx,*.html.erb'
+
+" vim-MatchTagAlways
+let g:mta_filetypes = {
+  \ 'html' : 1,
+  \ 'xhtml' : 1,
+  \ 'xml' : 1,
+  \ 'jinja' : 1,
+  \ 'javascript.jsx' : 1,
+  \}
 
 " Puts all yanks, etc., into clipboard
 set clipboard=unnamed
