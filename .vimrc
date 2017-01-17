@@ -171,10 +171,6 @@ set viminfo='20,\"50
 " Keep up to 50 lines of command line history
 set history=50
 
-
-" Remaps jj to escape in insert mode"
-inoremap jj <Esc>
-
 " Enable relativenumber by default
 set relativenumber
 
