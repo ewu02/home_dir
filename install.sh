@@ -16,7 +16,7 @@ ln -s $PWD/.editorconfig $HOME/.editorconfig
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Installs packages
-brew install ack git macvim zsh rbenv tree hub ag
+brew install ack git macvim zsh tree hub ag
 
 # Set up global .gitignore
 git config --global core.excludesfile ~/.gitignore_global
