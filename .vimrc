@@ -221,11 +221,18 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+" Maps 'ag' to Ack, and search from root directory (containing .git)
+"   Dependent on vim-fugitive plugin
+cnoreabbrev ag Gcd <bar> Ack!
+
 " Convenient way to play a macro recorded to register q
 nnoremap <Space> @q
 
 " Sort words in line
 vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
+
+" Open the quickfix window after grep invocation
+autocmd QuickFixCmdPost *grep* cwindow
 
 " Abbreviations (insert mode)
 "  substitute an abbreviation when you type any non-keyword character after an abbreviation
