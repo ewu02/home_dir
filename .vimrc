@@ -5,16 +5,14 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ For Vundle"""
 set nocompatible
-filetype on "Prevents stock OS X vim from exiting with error
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-" original repos on github
+" plugins in Github repos
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'Valloric/MatchTagAlways'
@@ -22,8 +20,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'alvan/vim-closetag'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'jordansissel/vim-ackmore'
-Plugin 'keith/swift.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'moll/vim-node'
 Plugin 'mxw/vim-jsx'
@@ -38,13 +34,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
 
 " vim-scripts repos
-"  e.g., Plugin 'L9'
 Plugin 'copypath.vim'
 Plugin 'matchit.zip'
-" non github repos
-"  e.g., Plugin 'git://git.wincent.com/command-t.git'
 
-filetype plugin indent on     " required!
+" All Plugins must be added before the following lines
+call vundle#end()            " required
+filetype plugin indent on    " required
 "
 " Brief help
 " :PluginList          - list configured bundles
@@ -58,6 +53,9 @@ filetype plugin indent on     " required!
 filetype on
 filetype indent on
 filetype plugin on
+
+" Displays all possible match above the command line during tab complete
+set wildmenu
 
 " Closes vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")

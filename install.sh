@@ -22,7 +22,7 @@ brew install ack git macvim zsh tree hub ag
 git config --global core.excludesfile ~/.gitignore_global
 
 # Installs Vundle in $HOME directory
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Installs or updates all plugins in vundle
 vim +PluginInstall! +qall
