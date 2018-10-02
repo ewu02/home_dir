@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugins in Github repos
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'alvan/vim-closetag'
