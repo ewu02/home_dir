@@ -14,12 +14,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugins in Github repos
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'vim-airline/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'alvan/vim-closetag'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'mileszs/ack.vim'
 Plugin 'moll/vim-node'
 Plugin 'mxw/vim-jsx'
@@ -35,7 +34,6 @@ Plugin 'vim-syntastic/syntastic'
 
 " vim-scripts repos
 Plugin 'copypath.vim'
-Plugin 'matchit.zip'
 
 " All Plugins must be added before the following lines
 call vundle#end()            " required
@@ -233,6 +231,18 @@ vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
 
 " Open the quickfix window after grep invocation
 autocmd QuickFixCmdPost *grep* cwindow
+
+" For lightline
+set laststatus=2
+let g:lightline = {
+      \ 'component': {
+      \   'filename': '%<%{LightlineFilename()}',
+      \ },
+      \ }
+
+function! LightlineFilename() abort
+  return expand('%:p') !=# '' ? expand('%:p') : '[No Name]'
+endfunction
 
 " Abbreviations (insert mode)
 "  substitute an abbreviation when you type any non-keyword character after an abbreviation

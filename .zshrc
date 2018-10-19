@@ -40,27 +40,9 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler rails git ruby)
+plugins=(bundler git)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-alias vimrc='vim ~/.vimrc'
-alias zshrc='vim ~/.zshrc'
-alias downloads='cd ~/Downloads'
-alias excel='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app'
-alias number='open -a /Applications/Numbers.app'
-alias word='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app'
-
-# Bypass issues with zshrc rails plugin 
-alias rails='rails'
-alias rake='rake'
-
-# Enable shims and autocompletion for rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Needed by mvn to use jdk 1.7
-export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Activates zsh's mv utility
 autoload -U zmv
@@ -68,8 +50,6 @@ autoload -U zmv
 #   of the wildcards into the appropriate syntax; no need to quote the argument
 alias mmv='noglob zmv -W'
 
-# Use Homebrew's directories for rbenv (rather than ~/.rbenv)
-export RBENV_ROOT=/usr/local/var/rbenv
-# Set ruby and gem path to rbenv root
-export PATH="$RBENV_ROOT/bin:$PATH"
-export PATH="$RBENV_ROOT/shims:$PATH"
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
