@@ -58,7 +58,6 @@ set wildmenu
 " Closes vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
 
-set background=dark
 set encoding=utf8
 
 " React.js
