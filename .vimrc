@@ -21,9 +21,8 @@ Plugin 'alvan/vim-closetag'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'moll/vim-node'
-Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'pangloss/vim-javascript'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
@@ -91,6 +90,7 @@ let g:RightAlign_RightBorder=120
 set colorcolumn=+1
 
 " Syntax Higlighting
+" Required for vim-polyglot
 syntax on
 
 " Highlight all matched pattern
