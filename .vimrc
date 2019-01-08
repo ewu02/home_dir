@@ -243,6 +243,11 @@ function! LightlineFilename() abort
   return expand('%:p') !=# '' ? expand('%:p') : '[No Name]'
 endfunction
 
+" Patience diff algorithm
+if has("patch-8.1.0360")
+    set diffopt+=internal,algorithm:patience
+endif
+
 " Abbreviations (insert mode)
 "  substitute an abbreviation when you type any non-keyword character after an abbreviation
 " I.e., iabbrev adn and
