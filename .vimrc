@@ -252,6 +252,18 @@ endif
 
 " For Ale
 let g:ale_linters_ignore = {'typescript': ['eslint']}
+function ALELSPMappings()
+	let l:lsp_found=0
+	for l:linter in ale#linter#Get(&filetype) | if !empty(l:linter.lsp) | let l:lsp_found=1 | endif | endfor
+	if (l:lsp_found)
+		nnoremap <buffer> <C-]> :ALEGoToDefinitionInSplit<CR>
+		nnoremap <buffer> <C-^> :ALEFindReferences<CR>
+	else
+		silent! unmap <buffer> <C-]>
+		silent! unmap <buffer> <C-^>
+	endif
+endfunction
+autocmd BufRead,FileType * call ALELSPMappings()
 "
 " For Ale integration with lightline
 let g:lightline.component_expand = {
