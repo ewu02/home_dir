@@ -11,7 +11,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 " plugins in Github repos
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'itchyny/lightline.vim'
@@ -258,9 +257,13 @@ function ALELSPMappings()
 	if (l:lsp_found)
 		nnoremap <buffer> <C-]> :ALEGoToDefinitionInSplit<CR>
 		nnoremap <buffer> <C-^> :ALEFindReferences<CR>
+    nmap <buffer> <C-k> <Plug>(ale_previous_wrap)
+    nmap <buffer> <C-j> <Plug>(ale_next_wrap)
 	else
 		silent! unmap <buffer> <C-]>
 		silent! unmap <buffer> <C-^>
+		silent! unmap <buffer> <C-k>
+		silent! unmap <buffer> <C-j>
 	endif
 endfunction
 autocmd BufRead,FileType * call ALELSPMappings()
@@ -279,6 +282,11 @@ let g:lightline.component_type = {
       \     'linter_ok': 'left',
       \ }
 let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+
+" Allows 'gf' to navigate to typescript files
+set suffixesadd+=.ts,.tsx
+
+set path+=$PWD/pretend_modules
 
 " Abbreviations (insert mode)
 "  substitute an abbreviation when you type any non-keyword character after an abbreviation
