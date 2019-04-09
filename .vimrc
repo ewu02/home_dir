@@ -256,7 +256,6 @@ function ALELSPMappings()
 	for l:linter in ale#linter#Get(&filetype) | if !empty(l:linter.lsp) | let l:lsp_found=1 | endif | endfor
 	if (l:lsp_found)
 		nnoremap <buffer> <C-]> :ALEGoToDefinitionInSplit<CR>
-		nnoremap <buffer> <C-^> :ALEFindReferences<CR>
     nmap <buffer> <C-k> <Plug>(ale_previous_wrap)
     nmap <buffer> <C-j> <Plug>(ale_next_wrap)
 	else
