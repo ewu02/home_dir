@@ -31,6 +31,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
 Plugin 'maximbaz/lightline-ale'
+Plugin 'aserebryakov/vim-todo-lists'
 
 " vim-scripts repos
 Plugin 'copypath.vim'

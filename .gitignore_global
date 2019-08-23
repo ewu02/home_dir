@@ -3,6 +3,9 @@
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 
+# TODOs
+*.todo
+
 # Session
 Session.vim
 
