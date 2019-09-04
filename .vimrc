@@ -220,9 +220,12 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" Maps 'ag' to Ack, and search from root directory (containing .git)
-"   Dependent on vim-fugitive plugin
-cnoreabbrev ag Gcd <bar> Ack!
+" Maps 'Ag' to Ack, and search from root directory (containing .git)
+function! Find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
 
 " Convenient way to play a macro recorded to register q
 nnoremap <Space> @q
