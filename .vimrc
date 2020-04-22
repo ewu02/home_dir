@@ -1,5 +1,5 @@
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
-   set fileencodings=utf-8,latin1
+ set fileencodings=utf-8,latin1
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -109,6 +109,8 @@ autocmd BufWritePre * %s/\s\+$//e
 " Ensure highlight group is not cleared by future colorscheme commands
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
+colorscheme desert
+
 " Highlights everything over column 120
 highlight OverLength ctermbg=red ctermfg=white " guibg=#592929
 autocmd BufWinEnter * match OverLength /\%81v.\+/
@@ -182,9 +184,6 @@ let mapleader=','
 " For easymotion plugin
 let g:EasyMotion_leader_key = '<Leader>'
 
-" Ignores trailing white space differences in vimdiff
-set diffopt+=iwhite
-
 " Delete and paste instead of cut and copy/overwrite
 nnoremap d "_d
 vnoremap d "_d
@@ -248,10 +247,16 @@ function! LightlineFilename() abort
   return expand('%:p') !=# '' ? expand('%:p') : '[No Name]'
 endfunction
 
-" Patience diff algorithm
-if has("patch-8.1.0360")
+if &diff
+  " Ignores trailing white space differences in vimdiff
+  set diffopt+=iwhite
+
+  " Patience diff algorithm
+  if has("patch-8.1.0360")
     set diffopt+=internal,algorithm:patience
+  endif
 endif
+
 
 " For Ale
 let g:ale_linters_ignore = {'typescript': ['eslint']}
